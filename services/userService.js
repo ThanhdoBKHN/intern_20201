@@ -1,5 +1,5 @@
 const bcrypt = require('bcrypt');
-const { User } = require('../models/index');
+const { User } = require('../models/index'); // all deu extend to index in model 
 
 exports.checkUserCredentials = async function (data) {
   const candidateUser = await User.findOne({
