@@ -15,6 +15,12 @@ module.exports = (sequelize, DataTypes) => {
     {
       email: DataTypes.STRING,
       password: DataTypes.STRING,
+      // cmt need see again
+      name: DataTypes.STRING,
+      address: DataTypes.STRING,
+      tel: DataTypes.STRING,
+      birthdat: DataTypes.DATE,
+      //role: DataTypes.ENUM,
     },
     {
       sequelize,
