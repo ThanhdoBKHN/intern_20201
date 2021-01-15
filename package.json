@@ -30,7 +30,7 @@
     "mysql2": "^2.2.5",
     "node-cron": "^2.0.3",
     "node-sass-middleware": "0.11.0",
-    "nodemon": "^2.0.4",
+    "nodemon": "^2.0.7",
     "pug": "2.0.0-beta11",
     "rotating-file-stream": "^2.1.1",
     "sequelize": "^6.3.5",

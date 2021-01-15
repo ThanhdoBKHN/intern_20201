@@ -8,3 +8,4 @@ node_modules/.bin/sequelize help
 ```
 npm run lint:fix
 ```
+20210115042050-create-category
