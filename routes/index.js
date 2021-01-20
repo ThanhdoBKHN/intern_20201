@@ -3,6 +3,7 @@ const authController = require('../controllers/auth/authController');
 const authValidator = require('../validator/auth');
 const signedInMiddleware = require('../middleware/signedIn');
 
+
 const router = express.Router();
 
 /* GET home page. */
@@ -21,5 +22,8 @@ router.get('/dashboard', signedInMiddleware, (req, res, next) => {
 });
 
 router.get('/logout', signedInMiddleware, authController.logout);
+
+// register user 
+router.get('/register', authController.register);
 
 module.exports = router;

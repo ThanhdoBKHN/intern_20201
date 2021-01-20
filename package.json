@@ -23,6 +23,8 @@
     "googleapis": "^51.0.0",
     "http-errors": "~1.6.3",
     "http-status-codes": "^1.4.0",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.20",
     "moment": "^2.27.0",
     "mongoose": "^5.9.15",
     "morgan": "~1.9.1",
