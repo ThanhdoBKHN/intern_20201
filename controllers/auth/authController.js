@@ -1,5 +1,5 @@
 const userService = require('../../services/userService');
-import { conn } from '../../util/dbConfig'
+// import { conn } from '../../util/dbConfig'
 // const dbConfig = require('../../util/dbConfig')
 // const conn = dbConfig.conn
 import _ from 'lodash'
@@ -24,23 +24,23 @@ exports.logout = async (req, res, next) => {
   res.redirect('/login');
 };
 
-exports.register = async (req, res, next) => {
-  let sql = "SELECT * FROM user WHERE email='"+req.body.email+"' "
-  console.log('sql', sql )
-  let query = conn.query(sql, async(err, results ) => {
-    if(err) throw err
-    if(results.length > 0 )
-    {
-      res.send(JSON.stringify({"status": 302, "error": "User is found with enail"}))
-      return
-    }
-    req.body.password = await bcrypt.hash(req.body.password, 12)
-    console.log("password: ", req.body.password);
-    let data = {username: req.body.username, email: req.body.email, password: req.body.password}
-    let sql = "INSERT INTO user SET ?"
-    let query = conn.query(sql,data, (err, results)=>{
-      if(err) throw err
-      res.send(JSON.stringify({"status":200, "error": null, "response": results}))
-    })
-  })
-};
+// exports.register = async (req, res, next) => {
+//   let sql = "SELECT * FROM user WHERE email='"+req.body.email+"' "
+//   console.log('sql', sql )
+//   let query = conn.query(sql, async(err, results ) => {
+//     if(err) throw err
+//     if(results.length > 0 )
+//     {
+//       res.send(JSON.stringify({"status": 302, "error": "User is found with enail"}))
+//       return
+//     }
+//     req.body.password = await bcrypt.hash(req.body.password, 12)
+//     console.log("password: ", req.body.password);
+//     let data = {username: req.body.username, email: req.body.email, password: req.body.password}
+//     let sql = "INSERT INTO user SET ?"
+//     let query = conn.query(sql,data, (err, results)=>{
+//       if(err) throw err
+//       res.send(JSON.stringify({"status":200, "error": null, "response": results}))
+//     })
+//   })
+// };
