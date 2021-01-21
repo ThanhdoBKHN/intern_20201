@@ -56,3 +56,7 @@ prepend body
     </div>
     <!-- /.login-box -->
   </body>
+  if errors 
+    ul
+      for error in errors
+        li!= error.msg

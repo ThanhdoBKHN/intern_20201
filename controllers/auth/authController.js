@@ -2,8 +2,8 @@ const userService = require('../../services/userService');
 // import { conn } from '../../util/dbConfig'
 // const dbConfig = require('../../util/dbConfig')
 // const conn = dbConfig.conn
-import _ from 'lodash'
-import bcrypt from 'bcrypt'
+// import _ from 'lodash'
+// import bcrypt from 'bcrypt'
 
 exports.login = async (req, res, next) => {
   const user = await userService.checkUserCredentials({
@@ -23,6 +23,10 @@ exports.logout = async (req, res, next) => {
   await req.session.destroy();
   res.redirect('/login');
 };
+
+exports.register = async (req, res, next) => {
+  
+}
 
 // exports.register = async (req, res, next) => {
 //   let sql = "SELECT * FROM user WHERE email='"+req.body.email+"' "

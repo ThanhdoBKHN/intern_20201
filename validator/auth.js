@@ -13,3 +13,20 @@ exports.postLogin = [
     next();
   },
 ];
+
+exports.postRegister = [
+  body('email').isEmail(),
+  body('password').not().isEmpty(),
+  body('repeatpassword').not().isEmpty(),
+  body('tel').isNumeric(),
+
+  (req, res, next) => {
+    const errors = validationResult(req);
+
+    if (!errors.isEmpty()) {
+      return res.render('auth/logup', { err: errors.errors });
+    }
+
+    next();
+  },
+]

@@ -24,8 +24,10 @@ router.get('/dashboard', signedInMiddleware, (req, res, next) => {
 router.get('/logout', signedInMiddleware, authController.logout);
 
 //register 
-router.get('/register',)
+router.get('/register', (req, res, next) => {
+  res.render('auth/logup', { title: 'Logup page' });
+})
 
-router.post('/register',)
+router.post('/register', authValidator.postRegister)
 
 module.exports = router;
